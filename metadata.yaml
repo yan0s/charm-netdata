@@ -1,0 +1,17 @@
+name: netdata
+summary: Charm to install netdata
+maintainer: Yanos Angelopoulos <yanos@grnet.gr>
+description: |
+  This is a charm for netdata installation, providing support
+  for integration with Prometheus.
+tags:
+  - monitoring
+  - netdata
+  - prometheus
+series:
+  - bionic
+requires:
+  netdata-host:
+    interface: "juju-info"
+    scope: "container"
+subordinate: !!bool "true"

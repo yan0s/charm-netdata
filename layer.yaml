@@ -1,0 +1,17 @@
+is: netdata
+includes:
+  - 'layer:basic'
+  - 'layer:apt'
+  - "interface:juju-info"
+options:
+  "basic":
+    "packages":
+      - python3-requests
+    "use_venv": !!bool "true"
+    "include_system_packages": !!bool "true"
+    "python_packages":
+      - requests
+  apt:
+    packages:
+      - netdata
+      - nginx

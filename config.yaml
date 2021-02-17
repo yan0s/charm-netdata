@@ -1,0 +1,35 @@
+options:
+  "netdata_nginx_port":
+    "default": 19998
+    "type": "int"
+    "description": "The port where Nginx will serve Netdata at."
+  "netdata_nginx_listen_subnet":
+    "default": ""
+    "type": "string"
+    "description": "Subnet on which Netdata host has an IP, this IP will be
+    the only one configured in Nginx to listen at.
+    Default value is \"\". Specify subnet in \"10.0.0.0/24\" form."
+  "netdata_nginx_allowed_subnet":
+    "default": "all"
+    "type": "string"
+    "description": "Subnet from which Netdata will be available.
+    Default value is \"all\". Specify subnet in \"10.0.0.0/24\" form."
+  "promreg_url":
+    "default": ""
+    "type": "string"
+    "description": "The http(s) url and port (usually 12321) where the
+    Prometheus Registration service is listening. If left an empty string,
+    promreg will not be used."
+  "promreg_authtoken":
+    "type": "string"
+    "default": "authtoken"
+    "description": "The Prometheus Registration authtoken."
+  "prometheus_main_label":
+    "default": ""
+    "type": "string"
+    "description": "During registration to Prometheus, the charm will assign
+    a main label to each target from one of the Juju units on the node. If
+    this field is left empty, one random unit name will be assigned. The
+    expected format is 'application_name01,application_name02'. Any number
+    of application names can be entered. The charm will assign as the main
+    label the unit matching the first available application name."
